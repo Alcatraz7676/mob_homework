@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/first"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintBottom_toTopOf="@+id/fourth"
+        app:layout_constraintEnd_toStartOf="@+id/second"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/second"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintEnd_toStartOf="@+id/third"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/first"
+        app:layout_constraintTop_toTopOf="@+id/first"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/third"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/second"
+        app:layout_constraintTop_toTopOf="@+id/first"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/fourth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintBottom_toTopOf="@+id/seventh"
+        app:layout_constraintEnd_toStartOf="@+id/second"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/fifth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintEnd_toStartOf="@+id/third"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/first"
+        app:layout_constraintTop_toTopOf="@+id/fourth"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/sixth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/second"
+        app:layout_constraintTop_toTopOf="@+id/fourth"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/seventh"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/second"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fourth"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/eighth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintEnd_toStartOf="@+id/third"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/first"
+        app:layout_constraintTop_toTopOf="@+id/seventh"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/ninth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/textview_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="64sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/second"
+        app:layout_constraintTop_toTopOf="@+id/seventh"
+        tools:text="X" />
+
+    <TextView
+        android:id="@+id/turnTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ход крестиков"
+        android:textSize="40sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Новая игра"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/turnTextView" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/cells"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="seventh,first,second,third,fifth,eighth,fourth,ninth,sixth" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
