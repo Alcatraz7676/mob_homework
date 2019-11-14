@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chat</string>
+
+    <string name="login.message.email">Почта</string>
+    <string name="login.message.password">Пароль</string>
+    <string name="login.message.signin">Войти</string>
+    <string name="login.message.signup">Зарегистрироваться</string>
+    <string name="login.notice.message.useradded">Вы были успешно зарегестрированы</string>
+    <string name="login.error.message.signin">Невозможно войти %s</string>
+    <string name="login.error.message.signup">Невозможно зарегистрироваться %s</string>
+
+    <string name="contactlist.menu.action.signoff">Выйти</string>
+    <string name="contactlist.title">Контакты</string>
+
+    <string name="addcontact.message.title">Добавить контакт</string>
+    <string name="addcontact.message.add">Принять</string>
+    <string name="addcontact.message.cancel">Отклонить</string>
+    <string name="addcontact.message.contactadded">Контакт был успешно добавлен</string>
+    <string name="addcontact.error.message">Невозможно добавить пользователя</string>
+
+    <string name="chat.edittext.hint">Сообщение</string>
+
+</resources>
