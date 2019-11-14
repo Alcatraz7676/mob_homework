@@ -1,10 +1,12 @@
 package com.movchinnikov.chat.login.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.movchinnikov.chat.R
+import com.movchinnikov.chat.contactlist.ui.ContactListActivity
 import com.movchinnikov.chat.login.LoginPresenter
 import com.movchinnikov.chat.login.LoginPresenterImpl
 import kotlinx.android.synthetic.main.activity_login.*
@@ -67,7 +69,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun navigateToMainScreen() {
-        //startActivity(Intent(this, ContactListActivity::class.java))
+        startActivity(Intent(this, ContactListActivity::class.java))
     }
 
     override fun newUserError(error: String) {

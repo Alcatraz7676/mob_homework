@@ -6,6 +6,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.movchinnikov.chat.entities.User
 import java.util.HashMap
 
 object FirebaseHelper {
@@ -84,7 +85,7 @@ object FirebaseHelper {
         notifyContactsOfConnectionChange(online, false)
     }
 
-//    fun signOff() {
-//        notifyContactsOfConnectionChange(User.OFFLINE, true)
-//    }
+    fun signOff() {
+        notifyContactsOfConnectionChange(User.OFFLINE, true)
+    }
 }
