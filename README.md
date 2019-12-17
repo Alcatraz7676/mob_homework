@@ -10,6 +10,6 @@
   * **Экран контактов**
   ![Image](https://sun9-19.userapi.com/c854520/v854520756/1a2417/PtHdcXOXuxY.jpg "contacts1")
   ![Image](https://sun9-45.userapi.com/c853428/v853428756/19cd2f/uVdqPmrXiKA.jpg "contacts2")
+  ![Image](https://sun9-39.userapi.com/c855336/v855336756/1a14a0/Ski_yEldqKw.jpg "contacts3")
   * **Экран чата**
   ![Image](https://sun9-8.userapi.com/c204624/v204624756/119e1/rXIQwJykGiA.jpg "chat1")
-  ![Image](https://sun9-39.userapi.com/c855336/v855336756/1a14a0/Ski_yEldqKw.jpg "chat2")
