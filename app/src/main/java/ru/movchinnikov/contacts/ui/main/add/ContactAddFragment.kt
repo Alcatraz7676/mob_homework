@@ -39,7 +39,11 @@ class ContactAddFragment : BaseFragment(), ContactAddView, BackButtonListener {
     private val router: Router
         get() = (parentFragment as RouterProvider).getRouter()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_add, container, false)
     }
 

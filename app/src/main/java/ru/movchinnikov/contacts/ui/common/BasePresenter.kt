@@ -12,5 +12,4 @@ abstract class BasePresenter<T : MvpView> : MvpPresenter<T>() {
         super.onDestroy()
         compositeDisposable.clear()
     }
-
 }

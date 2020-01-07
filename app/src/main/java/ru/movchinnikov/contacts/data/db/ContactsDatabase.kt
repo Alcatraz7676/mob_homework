@@ -29,7 +29,8 @@ abstract class ContactsDatabase : RoomDatabase() {
             return Room.databaseBuilder(
                 context,
                 ContactsDatabase::class.java,
-                "Contacts.db")
+                "Contacts.db"
+            )
                 .build()
         }
     }

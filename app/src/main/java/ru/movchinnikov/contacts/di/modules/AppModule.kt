@@ -9,5 +9,4 @@ class AppModule(applicationContext: Context) : Module() {
     init {
         bind<Context>().toInstance(applicationContext)
     }
-
 }

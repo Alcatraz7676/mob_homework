@@ -23,16 +23,6 @@ class ContactsPresenter(
         Log.i(LOG_TAG, "onFirstViewAttach()")
         viewState.requestContactPermission()
         getDbContacts()
-    } 
-
-    fun getDbContacts() {
-        contactsInteractor.observeDbContacts()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { contacts ->
-                Log.i(LOG_TAG, contacts.joinToString())
-                viewState.addDbContacts(contacts.map(Contact::toAdapterModel))
-            }.addTo(compositeDisposable)
     }
 
     fun getPhoneContacts() {
@@ -60,8 +50,18 @@ class ContactsPresenter(
         router.exit()
     }
 
+    private fun getDbContacts() {
+        contactsInteractor.getDbContacts()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .map { contacts -> contacts.map(Contact::toAdapterModel) }
+            .subscribe { contacts ->
+                Log.i(LOG_TAG, contacts.joinToString())
+                viewState.addDbContacts(contacts)
+            }.addTo(compositeDisposable)
+    }
+
     companion object {
         private const val LOG_TAG = "ContactsPresenter"
     }
-
 }

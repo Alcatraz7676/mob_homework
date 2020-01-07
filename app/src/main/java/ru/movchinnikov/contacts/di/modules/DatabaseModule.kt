@@ -17,5 +17,4 @@ class DatabaseModule : Module() {
         bind<ContactDao>().toProvider(ContactDaoProvider::class.java).providesSingleton()
         bind<IContactRepository>().toClass<ContactRepository>().singleton()
     }
-
 }

@@ -15,9 +15,6 @@ class MainActivity : MvpAppCompatActivity() {
 
     init {
         val scope = Toothpick.openScopes(DI.APP, DI.ACTIVITY)
-        scope.installModules(
-
-        )
         Toothpick.inject(this, scope)
     }
 
@@ -47,5 +44,4 @@ class MainActivity : MvpAppCompatActivity() {
             super.onBackPressed()
         }
     }
-
 }

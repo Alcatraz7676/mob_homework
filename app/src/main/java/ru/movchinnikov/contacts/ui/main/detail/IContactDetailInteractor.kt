@@ -9,5 +9,4 @@ interface IContactDetailInteractor {
     fun getContactById(id: Long): Single<Contact>
 
     fun deleteContact(id: Long): Maybe<Int>
-
 }

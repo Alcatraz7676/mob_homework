@@ -74,9 +74,7 @@ class MainFragmentContainer : MvpAppCompatFragment(), RouterProvider, BackButton
     override fun onBackPressed(): Boolean {
         val fragment = childFragmentManager.findFragmentById(R.id.fragment_content)
         return (fragment != null
-                && fragment is BackButtonListener
-                && (fragment as BackButtonListener).onBackPressed())
+            && fragment is BackButtonListener
+            && (fragment as BackButtonListener).onBackPressed())
     }
-
-
 }

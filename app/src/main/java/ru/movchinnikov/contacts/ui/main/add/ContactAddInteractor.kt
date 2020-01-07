@@ -13,5 +13,4 @@ class ContactAddInteractor(
     override fun addContact(contact: Contact): Completable {
         return contactsRepository.insertContact(contact)
     }
-
 }

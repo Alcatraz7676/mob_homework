@@ -7,24 +7,32 @@ import ru.movchinnikov.contacts.ui.common.BasePresenter
 import ru.terrakok.cicerone.Router
 
 @InjectViewState
-class ContactAddPresenter (
+class ContactAddPresenter(
     private val contactAddInteractor: IContactAddInteractor,
     private val router: Router
 ) : BasePresenter<ContactAddView>() {
 
-    fun addContact(name: String, surname: String, patronymic: String, phone: String, email: String) {
+    fun addContact(
+        name: String,
+        surname: String,
+        patronymic: String,
+        phone: String,
+        email: String
+    ) {
         val newId = arrayOf(name, surname, patronymic, phone, email)
             .map { it.hashCode().toLong() }
             .sum()
 
-        contactAddInteractor.addContact(Contact(
-            id = newId,
-            name = name,
-            surname = surname,
-            patronymic = patronymic,
-            phone = phone,
-            email = email
-        )).subscribe {
+        contactAddInteractor.addContact(
+            Contact(
+                id = newId,
+                name = name,
+                surname = surname,
+                patronymic = patronymic,
+                phone = phone,
+                email = email
+            )
+        ).subscribe {
             viewState.showToast("Контакт был успешно добавлен")
         }.addTo(compositeDisposable)
     }
@@ -32,5 +40,4 @@ class ContactAddPresenter (
     fun onBackPressed() {
         router.exit()
     }
-
 }

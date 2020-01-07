@@ -11,5 +11,4 @@ abstract class BaseFragment : MvpAppCompatFragment() {
         super.onDestroyView()
         compositeDisposable.clear()
     }
-
 }

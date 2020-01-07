@@ -16,5 +16,4 @@ class NavigationModule : Module() {
         bind<Router>().toProvider(RouterProvider::class.java).providesSingleton()
         bind<NavigatorHolder>().toProvider(NavigatorHolderProvider::class.java).providesSingleton()
     }
-
 }

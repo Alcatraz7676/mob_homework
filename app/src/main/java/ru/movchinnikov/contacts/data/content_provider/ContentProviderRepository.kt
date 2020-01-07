@@ -20,9 +20,9 @@ class ContentProviderRepository(
             val contactNames = mutableListOf<String>()
 
             if (ContextCompat.checkSelfPermission(
-                applicationContext,
-                Manifest.permission.READ_CONTACTS
-            ) == PackageManager.PERMISSION_GRANTED
+                    applicationContext,
+                    Manifest.permission.READ_CONTACTS
+                ) == PackageManager.PERMISSION_GRANTED
             ) {
                 val cursor = applicationContext.contentResolver.query(
                     ContactsContract.Contacts.CONTENT_URI,
@@ -32,9 +32,9 @@ class ContentProviderRepository(
                     null
                 )
                 if (cursor != null && cursor.moveToFirst()) {
-
                     while (cursor.moveToNext()) {
-                        val contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
+                        val contactName =
+                            cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
                         contactNames.add(contactName)
                     }
                     cursor.close()

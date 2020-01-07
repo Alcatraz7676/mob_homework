@@ -26,6 +26,5 @@ interface ContactDao {
     fun getContactById(id: Long): Single<Contact>
 
     @Query(QUERY_ALL)
-    fun observeAll(): Observable<List<Contact>>
-
+    fun getAll(): Single<List<Contact>>
 }

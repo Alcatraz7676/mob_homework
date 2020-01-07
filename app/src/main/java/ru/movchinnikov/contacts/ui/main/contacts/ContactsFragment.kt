@@ -131,5 +131,4 @@ class ContactsFragment : BaseFragment(), ContactsView, BackButtonListener {
     companion object {
         private const val MY_PERMISSIONS_REQUEST_READ_CONTACTS = 228
     }
-
 }

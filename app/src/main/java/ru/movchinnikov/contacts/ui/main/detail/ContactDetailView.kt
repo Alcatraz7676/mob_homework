@@ -9,5 +9,4 @@ interface ContactDetailView : MvpView {
 
     @StateStrategyType(AddToEndSingleStrategy::class)
     fun setContact(contact: Contact)
-
 }

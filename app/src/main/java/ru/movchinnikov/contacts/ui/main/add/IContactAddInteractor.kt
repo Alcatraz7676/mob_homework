@@ -6,5 +6,4 @@ import ru.movchinnikov.contacts.data.db.model.Contact
 interface IContactAddInteractor {
 
     fun addContact(contact: Contact): Completable
-
 }

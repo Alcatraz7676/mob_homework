@@ -11,5 +11,4 @@ class ContentProviderModule : Module() {
     init {
         bind<IContentProviderRepository>().toClass<ContentProviderRepository>().singleton()
     }
-
 }

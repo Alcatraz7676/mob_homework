@@ -45,5 +45,4 @@ class ContactDetailPresenter(
     companion object {
         private const val LOG_TAG = "ContactDetailPresenter"
     }
-
 }

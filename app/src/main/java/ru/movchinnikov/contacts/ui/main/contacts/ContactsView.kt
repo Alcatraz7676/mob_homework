@@ -17,5 +17,4 @@ interface ContactsView : MvpView {
 
     @StateStrategyType(SkipStrategy::class)
     fun requestContactPermission()
-
 }
