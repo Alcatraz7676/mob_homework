@@ -54,7 +54,6 @@ class ContactDetailFragment : BaseFragment(), ContactDetailView, BackButtonListe
 
     override fun onDestroyView() {
         super.onDestroyView()
-        presenter.onDestroy()
         (activity as MainActivity).setSupportActionBar(null)
     }
 

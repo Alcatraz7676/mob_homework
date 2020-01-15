@@ -39,8 +39,8 @@ class ContactRepository(
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    override fun getContacts(): Single<List<Contact>> {
-        return contactDao.getAll()
+    override fun observeContacts(): Observable<List<Contact>> {
+        return contactDao.observeAll()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }

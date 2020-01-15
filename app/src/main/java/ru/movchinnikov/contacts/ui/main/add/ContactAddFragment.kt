@@ -12,7 +12,6 @@ import io.reactivex.rxkotlin.addTo
 import kotlinx.android.synthetic.main.fragment_add.*
 import ru.movchinnikov.contacts.R
 import ru.movchinnikov.contacts.di.DI
-import ru.movchinnikov.contacts.ui.activity.MainActivity
 import ru.movchinnikov.contacts.ui.common.BackButtonListener
 import ru.movchinnikov.contacts.ui.common.BaseFragment
 import ru.movchinnikov.contacts.ui.common.RouterProvider
@@ -59,11 +58,6 @@ class ContactAddFragment : BaseFragment(), ContactAddView, BackButtonListener {
                 addContactEmail_edittext.text.toString()
             )
         }.addTo(compositeDisposable)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        presenter.onDestroy()
     }
 
     override fun onBackPressed(): Boolean {

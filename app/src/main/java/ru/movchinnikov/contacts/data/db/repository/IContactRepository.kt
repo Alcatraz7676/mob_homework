@@ -16,5 +16,5 @@ interface IContactRepository {
 
     fun getContactById(id: Long): Single<Contact>
 
-    fun getContacts(): Single<List<Contact>>
+    fun observeContacts(): Observable<List<Contact>>
 }

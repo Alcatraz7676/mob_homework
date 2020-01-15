@@ -66,20 +66,6 @@ class ContactsFragment : BaseFragment(), ContactsView, BackButtonListener {
         recycler_view.adapter = null
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.onDestroy()
-    }
-
-    override fun addDbContacts(contacts: List<ContactAdapterModel>) {
-        contactsAdapter.clearDbItems()
-        addContacts(contacts)
-    }
-
-    override fun addPhoneContacts(contacts: List<ContactAdapterModel>) {
-        addContacts(contacts)
-    }
-
     override fun onBackPressed(): Boolean {
         presenter.onBackPressed()
         return true
@@ -97,13 +83,15 @@ class ContactsFragment : BaseFragment(), ContactsView, BackButtonListener {
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
-        if (requestCode == MY_PERMISSIONS_REQUEST_READ_CONTACTS)
-            presenter.getPhoneContacts()
-        else
+        if (requestCode == MY_PERMISSIONS_REQUEST_READ_CONTACTS) {
+            presenter.observeAllContacts()
+        } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+            presenter.observeDbContacts()
+        }
     }
 
-    private fun addContacts(contacts: List<ContactAdapterModel>) {
+    override fun addContacts(contacts: List<ContactAdapterModel>) {
         contactsAdapter.addItems(contacts)
     }
 

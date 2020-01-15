@@ -9,5 +9,5 @@ interface IContactsInteractor {
 
     fun getPhoneContacts(): Maybe<List<String>>
 
-    fun getDbContacts(): Single<List<Contact>>
+    fun observeDbContacts(): Observable<List<Contact>>
 }

@@ -26,8 +26,8 @@ class ContactsInteractor(
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    override fun getDbContacts(): Single<List<Contact>> {
-        return contactRepository.getContacts()
+    override fun observeDbContacts(): Observable<List<Contact>> {
+        return contactRepository.observeContacts()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }

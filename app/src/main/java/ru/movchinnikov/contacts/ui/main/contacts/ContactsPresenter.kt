@@ -1,8 +1,12 @@
 package ru.movchinnikov.contacts.ui.main.contacts
 
-import android.util.Log
 import com.arellomobile.mvp.InjectViewState
+import io.reactivex.Maybe
+import io.reactivex.Observable
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxkotlin.Maybes
+import io.reactivex.rxkotlin.Observables
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import ru.movchinnikov.contacts.data.db.model.Contact
@@ -20,21 +24,24 @@ class ContactsPresenter(
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        Log.i(LOG_TAG, "onFirstViewAttach()")
         viewState.requestContactPermission()
-        getDbContacts()
     }
 
-    fun getPhoneContacts() {
-        contactsInteractor.getPhoneContacts()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+    fun observeAllContacts() {
+        Observables.combineLatest(
+            emitPhoneContacts().toObservable(),
+            emitDbContacts()
+        ) { phoneContacts, dbContacts ->
+            phoneContacts.toMutableList().apply { addAll(dbContacts) }
+        }.subscribe { contacts ->
+            viewState.addContacts(contacts)
+        }.addTo(compositeDisposable)
+    }
+
+    fun observeDbContacts() {
+        emitDbContacts()
             .subscribe { contacts ->
-                viewState.addPhoneContacts(
-                    contacts.map { name ->
-                        ContactAdapterModel(fullName = name, isContact = true)
-                    }
-                )
+                viewState.addContacts(contacts)
             }.addTo(compositeDisposable)
     }
 
@@ -50,18 +57,21 @@ class ContactsPresenter(
         router.exit()
     }
 
-    private fun getDbContacts() {
-        contactsInteractor.getDbContacts()
+    private fun emitPhoneContacts(): Maybe<List<ContactAdapterModel>> {
+        return contactsInteractor.getPhoneContacts()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .map { rawContacts ->
+                rawContacts.map { name ->
+                    ContactAdapterModel(fullName = name, isContact = true)
+                }
+            }
+    }
+
+    private fun emitDbContacts(): Observable<List<ContactAdapterModel>> {
+        return contactsInteractor.observeDbContacts()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { contacts -> contacts.map(Contact::toAdapterModel) }
-            .subscribe { contacts ->
-                Log.i(LOG_TAG, contacts.joinToString())
-                viewState.addDbContacts(contacts)
-            }.addTo(compositeDisposable)
-    }
-
-    companion object {
-        private const val LOG_TAG = "ContactsPresenter"
     }
 }

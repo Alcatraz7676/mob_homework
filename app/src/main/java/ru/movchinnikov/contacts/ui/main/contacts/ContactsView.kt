@@ -10,10 +10,7 @@ import ru.movchinnikov.contacts.ui.main.contacts.adapters.ContactAdapterModel
 interface ContactsView : MvpView {
 
     @StateStrategyType(AddToEndSingleStrategy::class)
-    fun addDbContacts(contacts: List<ContactAdapterModel>)
-
-    @StateStrategyType(AddToEndSingleStrategy::class)
-    fun addPhoneContacts(contacts: List<ContactAdapterModel>)
+    fun addContacts(contacts: List<ContactAdapterModel>)
 
     @StateStrategyType(SkipStrategy::class)
     fun requestContactPermission()

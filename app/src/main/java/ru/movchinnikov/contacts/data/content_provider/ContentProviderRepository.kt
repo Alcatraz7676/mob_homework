@@ -17,7 +17,7 @@ class ContentProviderRepository(
 
     override fun getContactNames(): Maybe<List<String>> {
         return Maybe.create<List<String>> {
-            val contactNames = mutableListOf<String>()
+            val contactNames = mutableSetOf<String>()
 
             if (ContextCompat.checkSelfPermission(
                     applicationContext,
@@ -39,7 +39,7 @@ class ContentProviderRepository(
                     }
                     cursor.close()
                 }
-                it.onSuccess(contactNames)
+                it.onSuccess(contactNames.toList())
             } else {
                 it.onComplete()
             }

@@ -31,14 +31,11 @@ class ContactsAdapter(
 
     fun addItems(newItems: List<ContactAdapterModel>) {
         val oldItems = items.toList()
+        items.clear()
         items.addAll(newItems)
         items.sortBy { it.fullName }
         val diff = DiffUtil.calculateDiff(ContactsDiffCallback(oldItems, items))
         diff.dispatchUpdatesTo(this)
-    }
-
-    fun clearDbItems() {
-        items.removeAll { it.id != -1L }
     }
 
     inner class ViewHolder(override val containerView: View) :
